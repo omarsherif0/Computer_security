@@ -1,0 +1,231 @@
+/* General container for the form */
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Form container styles */
+.form-container {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    padding: 30px;
+    position: relative; /* Make room for the slider */
+}
+
+/* Title styling */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Label styles */
+label {
+    display: block;
+    font-size: 16px;
+    margin: 15px 0 10px;
+    color: #555;
+}
+
+/* Input field container */
+.input-container {
+    position: relative;
+}
+
+/* Input field styles */
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Input field focus styles */
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Copy icon styles */
+.copy-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.copy-icon:hover {
+    color: #0056b3;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 0;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Remove button styles */
+.remove-button {
+    margin-top: 10px;
+    background-color: #dc3545;
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+/* Trace box that holds the result and logs */
+.trace-box {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 30px;
+    margin-bottom: 20px;
+    min-height: 200px;
+    font-size: 16px;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+/* Styling for the logs container */
+#logsContainer {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 30px; /* Add more space between text and slider */
+    width: 80%; /* Make this container take most of the space */
+}
+
+/* Result box that holds the logs and slider */
+/* Result box that holds the logs and slider */
+#resultBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    padding: 10px;
+    height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Positioning for the label and slider */
+#stepSliderContainer {
+    display: flex;
+    flex-direction: column; /* Arrange label, range bar, and slider vertically */
+    align-items: flex-start;
+}
+
+/* Blue range bar above the slider */
+.range-bar {
+    width: 100%; /* Full width of the container */
+    height: 5px;
+    background-color: #007bff; /* Blue color */
+    margin-bottom: 10px; /* Space between the range bar and the slider */
+}
+
+/* Logs container */
+/* Result box that holds the logs and slider */
+#resultBox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    padding: 10px;
+    height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Positioning for the label and slider */
+#stepSliderContainer {
+    display: flex;
+    flex-direction: column; /* Arrange label, range bar, and slider vertically */
+    align-items: flex-start;
+}
+
+/* Blue range bar above the slider */
+.range-bar {
+    width: 100%; /* Full width of the container */
+    height: 5px;
+    background-color: #007bff; /* Blue color */
+    margin-bottom: 10px; /* Space between the range bar and the slider */
+}
+
+/* Adjust the slider appearance */
+/* Adjust the slider appearance */
+#logSlider {
+    width: 100%; /* Make the slider span the full width */
+    height: 20px; /* Adjust height */
+    background-color: #ddd; /* Light gray background for the track */
+    appearance: none;
+    outline: none;
+    border-radius: 10px; /* Rounded track edges */
+    margin-bottom: 10px;
+}
+
+/* Styling the slider thumb */
+#logSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #007bff; /* Blue color for the thumb */
+    cursor: pointer;
+    border: none; /* Remove border */
+    margin-top: -7px; /* Center the thumb on the track */
+}
+
+#logSlider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #007bff; /* Blue color for the thumb */
+    cursor: pointer;
+    border: none;
+    margin-top: -7px; /* Center the thumb on the track */
+}
+
+/* Styling the slider track */
+#logSlider::-webkit-slider-runnable-track {
+    height: 5px;
+    background-color: #007bff; /* Blue color for the track */
+    border-radius: 5px;
+}
+
+#logSlider::-moz-range-track {
+    height: 5px;
+    background-color: #007bff; /* Blue color for the track */
+    border-radius: 5px;
+}
+
+/* Blue range bar above the slider */
+.range-bar {
+    width: 100%; /* Full width of the container */
+    height: 5px;
+    background-color: #007bff; /* Blue color */
+    margin-bottom: 10px; /* Space between the range bar and the slider */
+}
+
+

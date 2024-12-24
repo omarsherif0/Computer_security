@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/quantum.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/newtonsCradle.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AESCrypto</title>
+    <link rel="icon" href="{{url_for('static',filename='images/graph.png')}}" type="image/png" />
+    <link rel="stylesheet" type="text/css"
+      href="{{url_for('static',filename='CSS/Home.css')}}"/>
+    <link rel="stylesheet" type="text/css"
+      href="{{url_for('static',filename='CSS/Encrypt.css')}}"/>
+  </head>
+  <body>
+    <video id="video-background" autoplay loop muted>
+      <source src="{{url_for('static',filename='images/vid.mp4')}}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+      <div class="box">
+        <nav>
+          <l-newtons-cradle
+            class="img"
+            size="78"
+            speed="1.4"
+            color="#068FFF"></l-newtons-cradle>
+          <p class="logo pulsate">AESCrypto</p>
+          <ul class="nav">
+            <li><a href="/" class="blue">Home</a></li>
+            <li><a href="Encrypt.html" class="blue">Encrypt</a></li>
+            <li><a href="Decrypt.html" class="blue">Decrypt</a></li>
+          </ul>
+        </nav>
+
+        <div class="contains">
+          <div class="section-1">
+            <div class="content-wrapper">
+              <div class="container">
+                <div class="form-container">
+                  <h2>Decrypt Data</h2>
+                  <label for="key">Key (32 bytes, hex-encoded)</label>
+                  <input type="text" id="key" placeholder="Enter 32-byte hex key" />
+
+                  <label for="Ciphertext">Ciphertext</label>
+                  <div class="input-container">
+                    <input type="text" id="Ciphertext" placeholder="Enter Ciphertext to decrypt" />
+                    <span class="copy-icon" onclick="copyToClipboard()">&#x1F4CB;</span>
+                  </div>
+
+                  <button onclick="decryptData()">Decrypt</button>
+                  <button class="remove-button" onclick="clearFields()">Remove</button>
+                </div>
+
+                <!-- plaintext display section -->
+                <div class="form-container">
+                  <h2>Decryption Result</h2>
+                  <!-- Slider to navigate through the log steps -->
+                  <label for="logSlider">Step:</label>
+                  <div class="slider-container">
+                    <input type="range" id="logSlider" min="0" max="0" value="0" step="1" />
+                </div>
+                  <div class="trace-box" id="resultBox">
+                    <p id="resultContent">
+                      <div class="result">
+                        <p id="plaintext"> 
+                          {% if plaintext %}
+                          {{plaintext}}
+                          {% endif %}
+                        </p>
+                        <p id="logsContainer">
+                        </p>
+                      </div>
+                    </p>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="loader">
+        <l-quantum size="85" speed="1.75" color="blue"></l-quantum>
+      </div>
+      <script src="{{url_for('static',filename='Js/Home.js')}}"></script>
+      <script src="{{url_for('static',filename='Js/fetch.js')}}"></script>
+    </div>
+  </body>
+</html>
