@@ -27,9 +27,24 @@ def Encrypt():
         # Perform encryption
         ciphertext = encrypt(plaintext, key)
 
+        # Formatting the ciphertext for better readability (add spaces every 8 characters)
+        formatted_ciphertext = ' '.join([ciphertext[i:i+8] for i in range(0, len(ciphertext), 8)])
+
+        # Assuming 'logs' is available after encryption, format the logs with a line break after each array
+        formatted_logs = ""
+        for log in logs:
+            formatted_logs += f"Round {log['round']} - {log['step']}:\n"
+            # Assuming log['state'] is a 2D array, format each array on a new line
+            for array in log['state']:
+                formatted_logs += f"    {array}\n"  # Add a newline after each array for better readability
+            formatted_logs += "\n"  # Add a newline between log entries
+
+        # Combine the formatted ciphertext and logs into one variable
+        formatted_output = f"Ciphertext:\n{formatted_ciphertext}\n\nLogs:\n{formatted_logs}"
+
         # Render the result on the same page
-        return render_template("Encrypt.html", ciphertext=ciphertext)
-    return render_template("Encrypt.html")
+        return render_template("imgs.html", ciphertext=formatted_output)
+
 
 @app.route("/Decrypt.html")
 def Decrypt():
