@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, jsonify, request
-from Project import encrypt, decrypt
+from aes_utils import encrypt, decrypt
 from flask_cors import CORS
 import ast
 
@@ -68,5 +68,4 @@ def process_decryption():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
+    app.run(debug=True, port=9001)
