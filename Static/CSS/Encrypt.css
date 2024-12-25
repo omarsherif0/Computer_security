@@ -147,6 +147,55 @@ button:hover {
 }
 
 
+/* Style for the file upload container */
+
+input[type="file"] {
+    display: none;
+    /* Hide the default file input button */
+}
+
+
+/* Custom button for the file input */
+
+label[for="imageUpload"] {
+    display: inline-block;
+    background-color: #068FFF;
+    /* Set a background color */
+    color: white;
+    /* Set text color */
+    padding: 10px 20px;
+    /* Add padding to the button */
+    font-size: 16px;
+    /* Set font size */
+    cursor: pointer;
+    /* Make it clickable */
+    border-radius: 5px;
+    /* Round corners */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+
+/* Hover effect for the button */
+
+label[for="imageUpload"]:hover {
+    background-color: #055d7a;
+    /* Darken the background on hover */
+    transform: scale(1.05);
+    /* Slightly increase the size on hover */
+}
+
+
+/* Add a small icon to the button (optional) */
+
+label[for="imageUpload"]::before {
+    content: "📁";
+    /* Add a folder or file icon */
+    margin-right: 8px;
+    /* Space between icon and text */
+}
+
+
 /* Styling for the logs container */
 
 #logsContainer {
